@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guilherme Muniz | Backend Python</title>
+
+<style>
+:root {
+    color-scheme: light dark;
+    --bg: light-dark(#f7f8fa, #0d1117);
+    --surface: light-dark(#ffffff, #151b23);
+    --text: light-dark(#17202a, #f0f3f6);
+    --muted: light-dark(#5c6670, #aab4bf);
+    --border: light-dark(#e2e6ea, #303943);
+    --accent: #ff6b00;
+    --accent2: #ff8a3d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+#app {
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.container {
+    width: min(1080px, 92%);
+    margin: auto;
+}
+
+/* NAVBAR */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 800;
+    letter-spacing: -.04em;
+    font-size: 1.25rem;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .92rem;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 76vh;
+    display: grid;
+    align-items: center;
+    padding: 80px 0;
+}
+
+.kicker {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .14em;
+    font-size: .8rem;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 7vw, 5.8rem);
+    line-height: .98;
+    letter-spacing: -.06em;
+    margin: 14px 0 24px;
+    max-width: 900px;
+}
+
+h1 span {
+    color: var(--accent);
+}
+
+.hero p {
+    max-width: 680px;
+    color: var(--muted);
+    font-size: 1.15rem;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* SEÇÕES */
+
+section {
+    padding: 88px 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin: 0 0 10px;
+    letter-spacing: -.04em;
+}
+
+.section-intro {
+    color: var(--muted);
+    max-width: 700px;
+    margin: 0 0 34px;
+}
+
+/* SOBRE */
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.about p {
+    color: var(--muted);
+}
+
+/* HABILIDADES */
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: start;
+}
+
+.skill {
+    padding: 9px 13px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font-size: .9rem;
+}
+
+/* PROJETOS */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
+}
+
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--muted);
+    flex: 1;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 12px 0 18px;
+}
+
+.tag {
+    font-size: .75rem;
+    padding: 5px 8px;
+    border-radius: 7px;
+    background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+    color: var(--accent2);
+}
+
+.card a {
+    color: var(--accent);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* FORMAÇÃO */
+
+.timeline {
+    border-left: 2px solid var(--border);
+    padding-left: 24px;
+}
+
+.timeline-item {
+    margin-bottom: 28px;
+}
+
+.timeline-item strong {
+    display: block;
+}
+
+.timeline-item span {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+/* CONTATO */
+
+.contact {
+    text-align: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 50px 24px;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 35px 0 55px;
+    color: var(--muted);
+    text-align: center;
+    font-size: .9rem;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 760px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .about,
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 110px 0 70px;
+    }
+
+    section {
+        padding: 65px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+<nav>
+    <div class="container nav-inner">
+
+        <div class="logo">
+            Guilherme Muniz<span>-NewEraM</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#sobre">Sobre</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </div>
+
+    </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="container">
+        <img src="Eu.png" alt="Foto de Guilherme Muniz" style="width: 250px; height: 200px; border-radius: 10%">
+        <div class="kicker">
+            Backend Python
+        </div>
+
+        <h1>
+            Construindo soluções com
+            <span>Python</span>.
+        </h1>
+
+        <p>
+            Desenvolvedor focado em backend, APIs REST e bancos de dados,
+            com experiência prática em Python, FastAPI, SQL e Git/GitHub.
+        </p>
+
+        <div class="actions">
+
+            <a class="btn primary" href="#projetos">
+                Ver projetos
+            </a>
+
+            <a
+                class="btn"
+                href="https://github.com/NewErAM"
+                target="_blank"
+                rel="noopener">
+                GitHub
+            </a>
+
+            <a
+                class="btn"
+                href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
+                target="_blank"
+                rel="noopener">
+                LinkedIn
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOBRE -->
+
+<section id="sobre">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Sobre mim
+        </h2>
+
+        <p class="section-intro">
+            Desenvolvedor em formação contínua, com foco em desenvolvimento
+            backend e interesse em engenharia de software, APIs e cloud.
+        </p>
+
+        <div class="about">
+
+            <div>
+
+                <p>
+                    Tenho conhecimentos em Python, FastAPI, Pydantic,
+                    SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo
+                    projetos próprios para transformar conhecimento
+                    teórico em prática e aprimorar minha capacidade
+                    de resolver problemas.
+                </p>
+
+                <p>
+                    Meu objetivo é atuar profissionalmente com
+                    desenvolvimento de software, colaborando com equipes
+                    e evoluindo em arquitetura, testes, cloud e boas práticas.
+                </p>
+
+            </div>
+
+
+            <!-- HABILIDADES -->
+
+            <div id="habilidades">
+
+                <h3>
+                    Habilidades
+                </h3>
+
+                <div class="skills">
+
+                    <span class="skill">Python</span>
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">APIs REST</span>
+                    <span class="skill">Pydantic</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">SQLAlchemy</span>
+                    <span class="skill">SQLite</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">GitHub</span>
+                    <span class="skill">HTML5</span>
+                    <span class="skill">CSS3</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">React</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJETOS -->
+
+<section id="projetos">
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Projetos em destaque
+        </h2>
+
+        <p class="section-intro">
+            Meus principais projetos de backend, com foco em Python,
+            FastAPI, APIs REST e desenvolvimento de software.
+        </p>
+
+
+        <div class="projects">
+
+
+            <!-- PROJETO PRINCIPAL -->
+
+            <article class="card">
+
+                <h3>
+                    API To-Do List ⭐
+                </h3>
+
+                <p>
+                    API REST para gerenciamento de tarefas,
+                    desenvolvida para praticar conceitos de backend,
+                    organização de endpoints e operações de uma
+                    aplicação de tarefas.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">API REST</span>
+                    <span class="tag">Backend</span>
+                    <span class="tag">GitHub</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/NewEraM/API_To-Do-List"
+                    target="_blank"
+                    rel="noopener">
+
+                    Ver no GitHub →
+
+                </a>
+
+            </article>
+
+
+            <!-- FASTAPI EBAC -->
+
+            <article class="card">
+
+                <h3>
+                    FastApi-Ebac ⭐
+                </h3>
+
+                <p>
+                    Projeto de estudos em FastAPI com desenvolvimento
+                    de APIs, modelos Pydantic, autenticação, SQLAlchemy
+                    e integração com banco de dados SQLite.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">Python</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Pydantic</span>
+                    <span class="tag">SQLAlchemy</span>
+                    <span class="tag">SQLite</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/NewErAM/FastApi-Ebac"
+                    target="_blank"
+                    rel="noopener">
+
+                    Ver no GitHub →
+
+                </a>
+
+            </article>
+
+
+            <!-- IMC -->
+
+            <article class="card">
+
+                <h3>
+                    Calculadora IMC
+                </h3>
+
+                <p>
+                    Projeto para praticar lógica de programação
+                    e desenvolvimento web.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/NewErAM/calculadoraIMC"
+                    target="_blank"
+                    rel="noopener">
+
+                    Ver no GitHub →
+
+                </a>
+
+            </article>
+
+
+            <!-- CONTROLE DE GASTOS -->
+
+            <article class="card">
+
+                <h3>
+                    Controle de Gastos
+                </h3>
+
+                <p>
+                    Aplicação para praticar gerenciamento de despesas
+                    e lógica de aplicações web.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/NewErAM/calculadorControleGastos"
+                    target="_blank"
+                    rel="noopener">
+
+                    Ver no GitHub →
+
+                </a>
+
+            </article>
+
+
+            <!-- JOGO -->
+
+            <article class="card">
+
+                <h3>
+                    Jogo de Adivinhação
+                </h3>
+
+                <p>
+                    Projeto desenvolvido para praticar lógica de
+                    programação e interação com o usuário.
+                </p>
+
+                <div class="tags">
+
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+
+                </div>
+
+                <a
+                    href="https://github.com/NewErAM/jogoAdivinhacao"
+                    target="_blank"
+                    rel="noopener">
+
+                    Ver no GitHub →
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FORMAÇÃO -->
+
+<section>
+
+    <div class="container">
+
+        <h2 class="section-title">
+            Formação e desenvolvimento
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <strong>
+                    Curso Full Stack Python
+                </strong>
+
+                <span>
+                    Python · Backend · APIs · SQL · Desenvolvimento Web
+                </span>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <strong>
+                    Estudos contínuos em Backend
+                </strong>
+
+                <span>
+                    FastAPI · SQLAlchemy · APIs REST · Git/GitHub · boas práticas
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTATO -->
+
+<section id="contato">
+
+    <div class="container">
+
+        <div class="contact">
+
+            <div class="kicker">
+                Contato
+            </div>
+
+            <h2 class="section-title">
+                Vamos conversar?
+            </h2>
+
+            <p
+                class="section-intro"
+                style="margin-left:auto;margin-right:auto">
+
+                Estou buscando oportunidades na área de
+                desenvolvimento Backend Python.
+
+            </p>
+
+            <div
+                class="actions"
+                style="justify-content:center">
+
+                <a
+                    class="btn primary"
+                    href="mailto:muniz_157@outlook.com">
+
+                    Enviar e-mail
+
+                </a>
+
+                <a
+                    class="btn"
+                    href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
+                    target="_blank"
+                    rel="noopener">
+
+                    LinkedIn
+
+                </a>
+
+                <a
+                    class="btn"
+                    href="https://github.com/NewErAM"
+                    target="_blank"
+                    rel="noopener">
+
+                    GitHub
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Guilherme Muniz · Backend Python
+
+    </div>
+
+</footer>
+
+</div>
+
+</body>
+</html>
