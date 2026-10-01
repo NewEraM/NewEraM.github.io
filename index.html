@@ -95,6 +95,48 @@ nav {
     padding: 80px 0;
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+    align-items: center;
+    gap: 70px;
+}
+
+.hero-copy {
+    min-width: 0;
+}
+
+.hero-photo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-photo::before {
+    content: "";
+    position: absolute;
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    background: color-mix(
+        in srgb,
+        var(--accent) 14%,
+        transparent
+    );
+    filter: blur(8px);
+}
+
+.hero-photo img {
+    position: relative;
+    width: min(100%, 340px);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 50%;
+    border: 6px solid var(--surface);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+}
+
 .kicker {
     color: var(--accent);
     font-weight: 700;
@@ -236,7 +278,11 @@ section {
     font-size: .75rem;
     padding: 5px 8px;
     border-radius: 7px;
-    background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+    background: color-mix(
+        in srgb,
+        var(--accent) 12%,
+        var(--surface)
+    );
     color: var(--accent2);
 }
 
@@ -300,7 +346,30 @@ footer {
 
     .hero {
         min-height: auto;
-        padding: 110px 0 70px;
+        padding: 80px 0 70px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 38px;
+        text-align: center;
+    }
+
+    .hero-copy .actions {
+        justify-content: center;
+    }
+
+    .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-photo {
+        order: -1;
+    }
+
+    .hero-photo img {
+        width: 250px;
     }
 
     section {
@@ -322,10 +391,23 @@ footer {
         </div>
 
         <div class="nav-links">
-            <a href="#sobre">Sobre</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#contato">Contato</a>
+
+            <a href="#sobre">
+                Sobre
+            </a>
+
+            <a href="#habilidades">
+                Habilidades
+            </a>
+
+            <a href="#projetos">
+                Projetos
+            </a>
+
+            <a href="#contato">
+                Contato
+            </a>
+
         </div>
 
     </div>
@@ -338,42 +420,70 @@ footer {
 <section class="hero">
 
     <div class="container">
-        <img src="Eu.png" alt="Foto de Guilherme Muniz" style="width: 250px; height: 200px; border-radius: 10%">
-        <div class="kicker">
-            Backend Python
-        </div>
 
-        <h1>
-            Construindo soluções com
-            <span>Python</span>.
-        </h1>
+        <div class="hero-grid">
 
-        <p>
-            Desenvolvedor focado em backend, APIs REST e bancos de dados,
-            com experiência prática em Python, FastAPI, SQL e Git/GitHub.
-        </p>
+            <div class="hero-copy">
 
-        <div class="actions">
+                <div class="kicker">
+                    Backend Python
+                </div>
 
-            <a class="btn primary" href="#projetos">
-                Ver projetos
-            </a>
+                <h1>
+                    Construindo soluções com
+                    <span>Python</span>.
+                </h1>
 
-            <a
-                class="btn"
-                href="https://github.com/NewErAM"
-                target="_blank"
-                rel="noopener">
-                GitHub
-            </a>
+                <p>
+                    Desenvolvedor focado em backend, APIs REST e bancos
+                    de dados, com experiência prática em Python, FastAPI,
+                    SQL e Git/GitHub.
+                </p>
 
-            <a
-                class="btn"
-                href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
-                target="_blank"
-                rel="noopener">
-                LinkedIn
-            </a>
+                <div class="actions">
+
+                    <a
+                        class="btn primary"
+                        href="#projetos">
+
+                        Ver projetos
+
+                    </a>
+
+                    <a
+                        class="btn"
+                        href="https://github.com/NewErAM"
+                        target="_blank"
+                        rel="noopener">
+
+                        GitHub
+
+                    </a>
+
+                    <a
+                        class="btn"
+                        href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
+                        target="_blank"
+                        rel="noopener">
+
+                        LinkedIn
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOTO -->
+
+            <div class="hero-photo">
+
+                <img
+                    src="Eu.png"
+                    alt="Foto profissional de Guilherme Muniz">
+
+            </div>
 
         </div>
 
@@ -468,11 +578,10 @@ footer {
             FastAPI, APIs REST e desenvolvimento de software.
         </p>
 
-
         <div class="projects">
 
 
-            <!-- PROJETO PRINCIPAL -->
+            <!-- API TO-DO LIST -->
 
             <article class="card">
 
@@ -489,10 +598,21 @@ footer {
 
                 <div class="tags">
 
-                    <span class="tag">Python</span>
-                    <span class="tag">API REST</span>
-                    <span class="tag">Backend</span>
-                    <span class="tag">GitHub</span>
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        API REST
+                    </span>
+
+                    <span class="tag">
+                        Backend
+                    </span>
+
+                    <span class="tag">
+                        GitHub
+                    </span>
 
                 </div>
 
@@ -524,11 +644,25 @@ footer {
 
                 <div class="tags">
 
-                    <span class="tag">Python</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Pydantic</span>
-                    <span class="tag">SQLAlchemy</span>
-                    <span class="tag">SQLite</span>
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        FastAPI
+                    </span>
+
+                    <span class="tag">
+                        Pydantic
+                    </span>
+
+                    <span class="tag">
+                        SQLAlchemy
+                    </span>
+
+                    <span class="tag">
+                        SQLite
+                    </span>
 
                 </div>
 
@@ -544,7 +678,7 @@ footer {
             </article>
 
 
-            <!-- IMC -->
+            <!-- CALCULADORA IMC -->
 
             <article class="card">
 
@@ -559,9 +693,17 @@ footer {
 
                 <div class="tags">
 
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
-                    <span class="tag">JavaScript</span>
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        JavaScript
+                    </span>
 
                 </div>
 
@@ -592,9 +734,17 @@ footer {
 
                 <div class="tags">
 
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
 
                 </div>
 
@@ -625,9 +775,17 @@ footer {
 
                 <div class="tags">
 
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">CSS</span>
+                    <span class="tag">
+                        JavaScript
+                    </span>
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
 
                 </div>
 
