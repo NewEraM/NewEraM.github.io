@@ -7,374 +7,362 @@
 
 <style>
 :root {
-    color-scheme: light dark;
-    --bg: light-dark(#f7f8fa, #0d1117);
-    --surface: light-dark(#ffffff, #151b23);
-    --text: light-dark(#17202a, #f0f3f6);
-    --muted: light-dark(#5c6670, #aab4bf);
-    --border: light-dark(#e2e6ea, #303943);
-    --accent: #ff6b00;
-    --accent2: #ff8a3d;
+  color-scheme: light dark;
+  --bg: light-dark(#f7f8fa,#0d1117);
+  --surface: light-dark(#ffffff,#151b23);
+  --text: light-dark(#17202a,#f0f3f6);
+  --muted: light-dark(#5c6670,#aab4bf);
+  --border: light-dark(#e2e6ea,#303943);
+  --accent: #ff6b00;
+  --accent2:#ff8a3d;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing:border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior:smooth;
 }
 
 body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Inter, Segoe UI, Arial, sans-serif;
-    line-height: 1.6;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Segoe UI,Arial,sans-serif;
+  line-height:1.6;
 }
 
 #app {
-    min-height: 100vh;
-    background: var(--bg);
+  min-height:100vh;
+  background:var(--bg);
 }
 
 .container {
-    width: min(1080px, 92%);
-    margin: auto;
+  width:min(1080px,92%);
+  margin:auto;
 }
 
-/* NAVBAR */
-
 nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    backdrop-filter: blur(12px);
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    border-bottom: 1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(12px);
+  background:color-mix(in srgb,var(--bg) 88%,transparent);
+  border-bottom:1px solid var(--border);
 }
 
 .nav-inner {
-    height: 68px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo {
-    font-weight: 800;
-    letter-spacing: -.04em;
-    font-size: 1.25rem;
+  font-weight:800;
+  letter-spacing:-.04em;
+  font-size:1.25rem;
 }
 
 .logo span {
-    color: var(--accent);
+  color:var(--accent);
 }
 
 .nav-links {
-    display: flex;
-    gap: 22px;
+  display:flex;
+  gap:22px;
+  align-items:center;
 }
 
 .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: .92rem;
+  color:var(--muted);
+  text-decoration:none;
+  font-size:.92rem;
 }
 
 .nav-links a:hover {
-    color: var(--accent);
+  color:var(--accent);
 }
 
-/* HERO */
+.lang-btn {
+  background:transparent;
+  color:var(--muted);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:6px 10px;
+  cursor:pointer;
+  font:inherit;
+  font-size:.85rem;
+}
+
+.lang-btn:hover {
+  color:var(--accent);
+  border-color:var(--accent);
+}
 
 .hero {
-    min-height: 76vh;
-    display: grid;
-    align-items: center;
-    padding: 80px 0;
+  min-height:76vh;
+  display:grid;
+  align-items:center;
+  padding:80px 0;
 }
 
 .hero-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
-    align-items: center;
-    gap: 70px;
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);
+  align-items:center;
+  gap:70px;
 }
 
 .hero-copy {
-    min-width: 0;
+  min-width:0;
 }
 
 .hero-photo {
-    display: flex;
-    justify-content: center;
-    position: relative;
+  display:flex;
+  justify-content:center;
+  position:relative;
 }
 
 .hero-photo::before {
-    content: "";
-    position: absolute;
-    width: 330px;
-    height: 330px;
-    border-radius: 50%;
-    background: color-mix(
-        in srgb,
-        var(--accent) 14%,
-        transparent
-    );
-    filter: blur(8px);
+  content:"";
+  position:absolute;
+  width:330px;
+  height:330px;
+  border-radius:50%;
+  background:color-mix(in srgb,var(--accent) 14%,transparent);
+  filter:blur(8px);
 }
 
 .hero-photo img {
-    position: relative;
-    width: min(100%, 340px);
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 50%;
-    border: 6px solid var(--surface);
-    box-shadow: 0 24px 60px rgba(0, 0, 0, .28);
+  position:relative;
+  width:min(100%,340px);
+  aspect-ratio:1/1;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:50%;
+  border:6px solid var(--surface);
+  box-shadow:0 24px 60px rgba(0,0,0,.28);
 }
 
 .kicker {
-    color: var(--accent);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    font-size: .8rem;
+  color:var(--accent);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-size:.8rem;
 }
 
 h1 {
-    font-size: clamp(2.8rem, 7vw, 5.8rem);
-    line-height: .98;
-    letter-spacing: -.06em;
-    margin: 14px 0 24px;
-    max-width: 900px;
+  font-size:clamp(2.8rem,7vw,5.8rem);
+  line-height:.98;
+  letter-spacing:-.06em;
+  margin:14px 0 24px;
+  max-width:900px;
 }
 
 h1 span {
-    color: var(--accent);
+  color:var(--accent);
 }
 
 .hero p {
-    max-width: 680px;
-    color: var(--muted);
-    font-size: 1.15rem;
+  max-width:680px;
+  color:var(--muted);
+  font-size:1.15rem;
 }
 
 .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 18px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 700;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:10px;
+  border:1px solid var(--border);
+  text-decoration:none;
+  color:var(--text);
+  font-weight:700;
 }
 
 .btn.primary {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: #fff;
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
 }
 
 .btn:hover {
-    transform: translateY(-1px);
+  transform:translateY(-1px);
 }
 
-/* SEÇÕES */
-
 section {
-    padding: 88px 0;
+  padding:88px 0;
 }
 
 .section-title {
-    font-size: 2rem;
-    margin: 0 0 10px;
-    letter-spacing: -.04em;
+  font-size:2rem;
+  margin:0 0 10px;
+  letter-spacing:-.04em;
 }
 
 .section-intro {
-    color: var(--muted);
-    max-width: 700px;
-    margin: 0 0 34px;
+  color:var(--muted);
+  max-width:700px;
+  margin:0 0 34px;
 }
 
-/* SOBRE */
-
 .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
 }
 
 .about p {
-    color: var(--muted);
+  color:var(--muted);
 }
 
-/* HABILIDADES */
-
 .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-content: start;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-content:start;
 }
 
 .skill {
-    padding: 9px 13px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--surface);
-    font-size: .9rem;
+  padding:9px 13px;
+  border:1px solid var(--border);
+  border-radius:999px;
+  background:var(--surface);
+  font-size:.9rem;
 }
 
-/* PROJETOS */
-
 .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
 }
 
 .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    padding: 25px;
-    display: flex;
-    flex-direction: column;
-    min-height: 230px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  min-height:230px;
 }
 
 .card h3 {
-    margin: 0 0 10px;
-    font-size: 1.3rem;
+  margin:0 0 10px;
+  font-size:1.3rem;
 }
 
 .card p {
-    color: var(--muted);
-    flex: 1;
+  color:var(--muted);
+  flex:1;
 }
 
 .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-    margin: 12px 0 18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin:12px 0 18px;
 }
 
 .tag {
-    font-size: .75rem;
-    padding: 5px 8px;
-    border-radius: 7px;
-    background: color-mix(
-        in srgb,
-        var(--accent) 12%,
-        var(--surface)
-    );
-    color: var(--accent2);
+  font-size:.75rem;
+  padding:5px 8px;
+  border-radius:7px;
+  background:color-mix(in srgb,var(--accent) 12%,var(--surface));
+  color:var(--accent2);
 }
 
 .card a {
-    color: var(--accent);
-    font-weight: 700;
-    text-decoration: none;
+  color:var(--accent);
+  font-weight:700;
+  text-decoration:none;
 }
 
-/* FORMAÇÃO */
-
 .timeline {
-    border-left: 2px solid var(--border);
-    padding-left: 24px;
+  border-left:2px solid var(--border);
+  padding-left:24px;
 }
 
 .timeline-item {
-    margin-bottom: 28px;
+  margin-bottom:28px;
 }
 
 .timeline-item strong {
-    display: block;
+  display:block;
 }
 
 .timeline-item span {
-    color: var(--muted);
-    font-size: .9rem;
+  color:var(--muted);
+  font-size:.9rem;
 }
-
-/* CONTATO */
 
 .contact {
-    text-align: center;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 24px;
-    padding: 50px 24px;
+  text-align:center;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:50px 24px;
 }
-
-/* FOOTER */
 
 footer {
-    padding: 35px 0 55px;
-    color: var(--muted);
-    text-align: center;
-    font-size: .9rem;
+  padding:35px 0 55px;
+  color:var(--muted);
+  text-align:center;
+  font-size:.9rem;
 }
 
-/* RESPONSIVO */
+@media (max-width:760px) {
+  .nav-links {
+    display:none;
+  }
 
-@media (max-width: 760px) {
+  .about,
+  .projects {
+    grid-template-columns:1fr;
+  }
 
-    .nav-links {
-        display: none;
-    }
+  .hero {
+    min-height:auto;
+    padding:80px 0 70px;
+  }
 
-    .about,
-    .projects {
-        grid-template-columns: 1fr;
-    }
+  .hero-grid {
+    grid-template-columns:1fr;
+    gap:38px;
+    text-align:center;
+  }
 
-    .hero {
-        min-height: auto;
-        padding: 80px 0 70px;
-    }
+  .hero-copy .actions {
+    justify-content:center;
+  }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 38px;
-        text-align: center;
-    }
+  .hero-copy p {
+    margin-left:auto;
+    margin-right:auto;
+  }
 
-    .hero-copy .actions {
-        justify-content: center;
-    }
+  .hero-photo {
+    order:-1;
+  }
 
-    .hero-copy p {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .hero-photo img {
+    width:250px;
+  }
 
-    .hero-photo {
-        order: -1;
-    }
-
-    .hero-photo img {
-        width: 250px;
-    }
-
-    section {
-        padding: 65px 0;
-    }
+  section {
+    padding:65px 0;
+  }
 }
 </style>
 </head>
@@ -384,34 +372,50 @@ footer {
 <div id="app">
 
 <nav>
-    <div class="container nav-inner">
+  <div class="container nav-inner">
 
-        <div class="logo">
-            Guilherme Muniz<span>-NewEraM</span>
-        </div>
+    <div class="logo">
+      Guilherme Muniz<span>- NewEraM</span>
+    </div>
 
-        <div class="nav-links">
+    <div class="nav-links">
 
-            <a href="#sobre">
-                Sobre
-            </a>
+      <a href="#sobre"
+         data-pt="Sobre"
+         data-en="About">
+         Sobre
+      </a>
 
-            <a href="#habilidades">
-                Habilidades
-            </a>
+      <a href="#habilidades"
+         data-pt="Habilidades"
+         data-en="Skills">
+         Habilidades
+      </a>
 
-            <a href="#projetos">
-                Projetos
-            </a>
+      <a href="#projetos"
+         data-pt="Projetos"
+         data-en="Projects">
+         Projetos
+      </a>
 
-            <a href="#contato">
-                Contato
-            </a>
+      <a href="#contato"
+         data-pt="Contato"
+         data-en="Contact">
+         Contato
+      </a>
 
-        </div>
+      <button
+        class="lang-btn"
+        id="languageBtn"
+        type="button">
+        EN
+      </button>
 
     </div>
+
+  </div>
 </nav>
+
 
 <main>
 
@@ -419,75 +423,74 @@ footer {
 
 <section class="hero">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="hero-grid">
+    <div class="hero-grid">
 
-            <div class="hero-copy">
+      <div class="hero-copy">
 
-                <div class="kicker">
-                    Backend Python
-                </div>
+        <div class="kicker">
+          Backend Python
+        </div>
 
-                <h1>
-                    Construindo soluções com
-                    <span>Python</span>.
-                </h1>
+        <h1>
+          <span
+            data-pt="Construindo soluções com"
+            data-en="Building solutions with">
+            Construindo soluções com
+          </span>
 
-                <p>
-                    Desenvolvedor focado em backend, APIs REST e bancos
-                    de dados, com experiência prática em Python, FastAPI,
-                    SQL e Git/GitHub.
-                </p>
+          <span>Python</span>.
+        </h1>
 
-                <div class="actions">
+        <p
+          data-pt="Desenvolvedor focado em backend, APIs REST e bancos de dados, com experiência prática em Python, FastAPI, SQL e Git/GitHub."
+          data-en="Developer focused on backend development, REST APIs and databases, with practical experience in Python, FastAPI, SQL and Git/GitHub.">
+          Desenvolvedor focado em backend, APIs REST e bancos de dados, com experiência prática em Python, FastAPI, SQL e Git/GitHub.
+        </p>
 
-                    <a
-                        class="btn primary"
-                        href="#projetos">
+        <div class="actions">
 
-                        Ver projetos
+          <a
+            class="btn primary"
+            href="#projetos"
+            data-pt="Ver projetos"
+            data-en="View projects">
+            Ver projetos
+          </a>
 
-                    </a>
+          <a
+            class="btn"
+            href="https://github.com/NewErAM"
+            target="_blank"
+            rel="noopener">
+            GitHub
+          </a>
 
-                    <a
-                        class="btn"
-                        href="https://github.com/NewErAM"
-                        target="_blank"
-                        rel="noopener">
-
-                        GitHub
-
-                    </a>
-
-                    <a
-                        class="btn"
-                        href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
-                        target="_blank"
-                        rel="noopener">
-
-                        LinkedIn
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- FOTO -->
-
-            <div class="hero-photo">
-
-                <img
-                    src="Eu.png"
-                    alt="Foto profissional de Guilherme Muniz">
-
-            </div>
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
+            target="_blank"
+            rel="noopener">
+            LinkedIn
+          </a>
 
         </div>
 
+      </div>
+
+
+      <div class="hero-photo">
+
+        <img
+          src="Eu.png"
+          alt="Foto profissional de Guilherme Muniz">
+
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
@@ -496,69 +499,73 @@ footer {
 
 <section id="sobre">
 
-    <div class="container">
+  <div class="container">
 
-        <h2 class="section-title">
-            Sobre mim
-        </h2>
+    <h2
+      class="section-title"
+      data-pt="Sobre mim"
+      data-en="About me">
+      Sobre mim
+    </h2>
 
-        <p class="section-intro">
-            Desenvolvedor em formação contínua, com foco em desenvolvimento
-            backend e interesse em engenharia de software, APIs e cloud.
+    <p
+      class="section-intro"
+      data-pt="Desenvolvedor em formação contínua, com foco em desenvolvimento backend e interesse em engenharia de software, APIs e cloud."
+      data-en="Developer continuously learning, focused on backend development and interested in software engineering, APIs and cloud.">
+      Desenvolvedor em formação contínua, com foco em desenvolvimento backend e interesse em engenharia de software, APIs e cloud.
+    </p>
+
+
+    <div class="about">
+
+      <div>
+
+        <p
+          data-pt="Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo projetos próprios para transformar conhecimento teórico em prática e aprimorar minha capacidade de resolver problemas."
+          data-en="I have knowledge of Python, FastAPI, Pydantic, SQLAlchemy, SQL and Git/GitHub. I build personal projects to turn theory into practice and improve my problem-solving skills.">
+          Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo projetos próprios para transformar conhecimento teórico em prática e aprimorar minha capacidade de resolver problemas.
         </p>
 
-        <div class="about">
+        <p
+          data-pt="Meu objetivo é atuar profissionalmente com desenvolvimento de software, colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas."
+          data-en="My goal is to work professionally in software development, collaborating with teams and growing in architecture, testing, cloud and best practices.">
+          Meu objetivo é atuar profissionalmente com desenvolvimento de software, colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas.
+        </p>
 
-            <div>
-
-                <p>
-                    Tenho conhecimentos em Python, FastAPI, Pydantic,
-                    SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo
-                    projetos próprios para transformar conhecimento
-                    teórico em prática e aprimorar minha capacidade
-                    de resolver problemas.
-                </p>
-
-                <p>
-                    Meu objetivo é atuar profissionalmente com
-                    desenvolvimento de software, colaborando com equipes
-                    e evoluindo em arquitetura, testes, cloud e boas práticas.
-                </p>
-
-            </div>
+      </div>
 
 
-            <!-- HABILIDADES -->
+      <div id="habilidades">
 
-            <div id="habilidades">
+        <h3
+          data-pt="Habilidades"
+          data-en="Skills">
+          Habilidades
+        </h3>
 
-                <h3>
-                    Habilidades
-                </h3>
+        <div class="skills">
 
-                <div class="skills">
-
-                    <span class="skill">Python</span>
-                    <span class="skill">FastAPI</span>
-                    <span class="skill">APIs REST</span>
-                    <span class="skill">Pydantic</span>
-                    <span class="skill">SQL</span>
-                    <span class="skill">SQLAlchemy</span>
-                    <span class="skill">SQLite</span>
-                    <span class="skill">Git</span>
-                    <span class="skill">GitHub</span>
-                    <span class="skill">HTML5</span>
-                    <span class="skill">CSS3</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">React</span>
-
-                </div>
-
-            </div>
+          <span class="skill">Python</span>
+          <span class="skill">FastAPI</span>
+          <span class="skill">APIs REST</span>
+          <span class="skill">Pydantic</span>
+          <span class="skill">SQL</span>
+          <span class="skill">SQLAlchemy</span>
+          <span class="skill">SQLite</span>
+          <span class="skill">Git</span>
+          <span class="skill">GitHub</span>
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
 
         </div>
 
+      </div>
+
     </div>
+
+  </div>
 
 </section>
 
@@ -567,242 +574,266 @@ footer {
 
 <section id="projetos">
 
-    <div class="container">
+  <div class="container">
 
-        <h2 class="section-title">
-            Projetos em destaque
-        </h2>
+    <h2
+      class="section-title"
+      data-pt="Projetos em destaque"
+      data-en="Featured projects">
+      Projetos em destaque
+    </h2>
 
-        <p class="section-intro">
-            Meus principais projetos de backend, com foco em Python,
-            FastAPI, APIs REST e desenvolvimento de software.
+    <p
+      class="section-intro"
+      data-pt="Meus principais projetos de backend, com foco em Python, FastAPI, APIs REST e desenvolvimento de software."
+      data-en="My main backend projects, focused on Python, FastAPI, REST APIs and software development.">
+      Meus principais projetos de backend, com foco em Python, FastAPI, APIs REST e desenvolvimento de software.
+    </p>
+
+
+    <div class="projects">
+
+
+      <!-- API TODO -->
+
+      <article class="card">
+
+        <h3>
+          API To-Do List ⭐
+        </h3>
+
+        <p
+          data-pt="API REST para gerenciamento de tarefas, desenvolvida para praticar conceitos de backend, organização de endpoints e operações de uma aplicação de tarefas."
+          data-en="REST API for task management, developed to practice backend concepts, endpoint organization and task operations.">
+          API REST para gerenciamento de tarefas, desenvolvida para praticar conceitos de backend, organização de endpoints e operações de uma aplicação de tarefas.
         </p>
 
-        <div class="projects">
-
-
-            <!-- API TO-DO LIST -->
-
-            <article class="card">
-
-                <h3>
-                    API To-Do List ⭐
-                </h3>
-
-                <p>
-                    API REST para gerenciamento de tarefas,
-                    desenvolvida para praticar conceitos de backend,
-                    organização de endpoints e operações de uma
-                    aplicação de tarefas.
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">
-                        Python
-                    </span>
-
-                    <span class="tag">
-                        API REST
-                    </span>
-
-                    <span class="tag">
-                        Backend
-                    </span>
-
-                    <span class="tag">
-                        GitHub
-                    </span>
-
-                </div>
-
-                <a
-                    href="https://github.com/NewEraM/API_To-Do-List"
-                    target="_blank"
-                    rel="noopener">
-
-                    Ver no GitHub →
-
-                </a>
-
-            </article>
-
-
-            <!-- FASTAPI EBAC -->
-
-            <article class="card">
-
-                <h3>
-                    FastApi-Ebac ⭐
-                </h3>
-
-                <p>
-                    Projeto de estudos em FastAPI com desenvolvimento
-                    de APIs, modelos Pydantic, autenticação, SQLAlchemy
-                    e integração com banco de dados SQLite.
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">
-                        Python
-                    </span>
-
-                    <span class="tag">
-                        FastAPI
-                    </span>
-
-                    <span class="tag">
-                        Pydantic
-                    </span>
-
-                    <span class="tag">
-                        SQLAlchemy
-                    </span>
-
-                    <span class="tag">
-                        SQLite
-                    </span>
-
-                </div>
-
-                <a
-                    href="https://github.com/NewErAM/FastApi-Ebac"
-                    target="_blank"
-                    rel="noopener">
-
-                    Ver no GitHub →
-
-                </a>
-
-            </article>
-
-
-            <!-- CALCULADORA IMC -->
-
-            <article class="card">
-
-                <h3>
-                    Calculadora IMC
-                </h3>
-
-                <p>
-                    Projeto para praticar lógica de programação
-                    e desenvolvimento web.
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">
-                        HTML
-                    </span>
-
-                    <span class="tag">
-                        CSS
-                    </span>
-
-                    <span class="tag">
-                        JavaScript
-                    </span>
-
-                </div>
-
-                <a
-                    href="https://github.com/NewErAM/calculadoraIMC"
-                    target="_blank"
-                    rel="noopener">
-
-                    Ver no GitHub →
-
-                </a>
-
-            </article>
-
-
-            <!-- CONTROLE DE GASTOS -->
-
-            <article class="card">
-
-                <h3>
-                    Controle de Gastos
-                </h3>
-
-                <p>
-                    Aplicação para praticar gerenciamento de despesas
-                    e lógica de aplicações web.
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">
-                        JavaScript
-                    </span>
-
-                    <span class="tag">
-                        HTML
-                    </span>
-
-                    <span class="tag">
-                        CSS
-                    </span>
-
-                </div>
-
-                <a
-                    href="https://github.com/NewErAM/calculadorControleGastos"
-                    target="_blank"
-                    rel="noopener">
-
-                    Ver no GitHub →
-
-                </a>
-
-            </article>
-
-
-            <!-- JOGO -->
-
-            <article class="card">
-
-                <h3>
-                    Jogo de Adivinhação
-                </h3>
-
-                <p>
-                    Projeto desenvolvido para praticar lógica de
-                    programação e interação com o usuário.
-                </p>
-
-                <div class="tags">
-
-                    <span class="tag">
-                        JavaScript
-                    </span>
-
-                    <span class="tag">
-                        HTML
-                    </span>
-
-                    <span class="tag">
-                        CSS
-                    </span>
-
-                </div>
-
-                <a
-                    href="https://github.com/NewErAM/jogoAdivinhacao"
-                    target="_blank"
-                    rel="noopener">
-
-                    Ver no GitHub →
-
-                </a>
-
-            </article>
+        <div class="tags">
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">SQLite</span>
+        </div>
+
+
+        <pre
+          style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.get("/tarefas")
+def get_tarefas(
+    page: int = 1,
+    limit: int = 10,
+    db: Session = Depends(sessao_db),
+):
+    tarefas = db.query(TarefasDB).offset((page - 1) * limit).limit(limit).all()</code></pre>
+
+
+        <a
+          href="https://github.com/NewEraM/API_To-Do-List/blob/master/ToDoList.py"
+          target="_blank"
+          rel="noopener"
+          data-pt="Ver exemplo completo →"
+          data-en="View full example →">
+          Ver exemplo completo →
+        </a>
+
+      </article>
+
+
+      <!-- CODIGO EM DESTAQUE -->
+
+      <article class="card">
+
+        <h3
+          data-pt="Código em destaque"
+          data-en="Featured code">
+          Código em destaque
+        </h3>
+
+        <p
+          data-pt="Trecho real da API To-Do List: autenticação HTTP Basic, acesso ao banco SQLite com SQLAlchemy e criação de tarefas com FastAPI."
+          data-en="Real code from the To-Do List API: HTTP Basic authentication, SQLite database access with SQLAlchemy, and task creation with FastAPI.">
+          Trecho real da API To-Do List: autenticação HTTP Basic, acesso ao banco SQLite com SQLAlchemy e criação de tarefas com FastAPI.
+        </p>
+
+
+        <pre
+          style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.post("/adicionar_tarefas")
+def post_tarefa(
+    tarefa: TarefaCreate,
+    db: Session = Depends(sessao_db),
+    credentials: HTTPBasicCredentials = Depends(autenticar_user),
+):
+    nova_tarefa = TarefasDB(
+        nome_tarefa=tarefa.nome_tarefa,
+        descricao_tarefa=tarefa.descricao_tarefa,
+        status_tarefa=tarefa.status_tarefa,
+    )
+    db.add(nova_tarefa)
+    db.commit()
+    db.refresh(nova_tarefa)</code></pre>
+
+
+        <div class="tags">
+
+          <span class="tag">FastAPI</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">SQLite</span>
+          <span class="tag">HTTP Basic</span>
 
         </div>
 
+
+        <a
+          href="https://github.com/NewEraM/API_To-Do-List/blob/master/ToDoList.py"
+          target="_blank"
+          rel="noopener"
+          data-pt="Ver código completo →"
+          data-en="View full code →">
+          Ver código completo →
+        </a>
+
+      </article>
+
+
+      <!-- FASTAPI EBAC -->
+
+      <article class="card">
+
+        <h3>
+          FastApi-Ebac ⭐
+        </h3>
+
+        <p
+          data-pt="Projeto de estudos em FastAPI com desenvolvimento de APIs, modelos Pydantic, autenticação, SQLAlchemy e integração com banco de dados SQLite."
+          data-en="FastAPI study project involving API development, Pydantic models, authentication, SQLAlchemy and SQLite database integration.">
+          Projeto de estudos em FastAPI com desenvolvimento de APIs, modelos Pydantic, autenticação, SQLAlchemy e integração com banco de dados SQLite.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">Python</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Pydantic</span>
+          <span class="tag">SQLAlchemy</span>
+          <span class="tag">SQLite</span>
+
+        </div>
+
+        <a
+          href="https://github.com/NewErAM/FastApi-Ebac"
+          target="_blank"
+          rel="noopener"
+          data-pt="Ver no GitHub →"
+          data-en="View on GitHub →">
+          Ver no GitHub →
+        </a>
+
+      </article>
+
+
+      <!-- CALCULADORA IMC -->
+
+      <article class="card">
+
+        <h3>
+          Calculadora IMC
+        </h3>
+
+        <p
+          data-pt="Projeto para praticar lógica de programação e desenvolvimento web."
+          data-en="Project developed to practice programming logic and web development.">
+          Projeto para praticar lógica de programação e desenvolvimento web.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+
+        </div>
+
+        <a
+          href="https://github.com/NewErAM/calculadoraIMC"
+          target="_blank"
+          rel="noopener"
+          data-pt="Ver no GitHub →"
+          data-en="View on GitHub →">
+          Ver no GitHub →
+        </a>
+
+      </article>
+
+
+      <!-- CONTROLE DE GASTOS -->
+
+      <article class="card">
+
+        <h3>
+          Controle de Gastos
+        </h3>
+
+        <p
+          data-pt="Aplicação para praticar gerenciamento de despesas e lógica de aplicações web."
+          data-en="Application developed to practice expense management and web application logic.">
+          Aplicação para praticar gerenciamento de despesas e lógica de aplicações web.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+
+        </div>
+
+        <a
+          href="https://github.com/NewErAM/calculadorControleGastos"
+          target="_blank"
+          rel="noopener"
+          data-pt="Ver no GitHub →"
+          data-en="View on GitHub →">
+          Ver no GitHub →
+        </a>
+
+      </article>
+
+
+      <!-- JOGO -->
+
+      <article class="card">
+
+        <h3>
+          Jogo de Adivinhação
+        </h3>
+
+        <p
+          data-pt="Projeto desenvolvido para praticar lógica de programação e interação com o usuário."
+          data-en="Project developed to practice programming logic and user interaction.">
+          Projeto desenvolvido para praticar lógica de programação e interação com o usuário.
+        </p>
+
+        <div class="tags">
+
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+
+        </div>
+
+        <a
+          href="https://github.com/NewErAM/jogoAdivinhacao"
+          target="_blank"
+          rel="noopener"
+          data-pt="Ver no GitHub →"
+          data-en="View on GitHub →">
+          Ver no GitHub →
+        </a>
+
+      </article>
+
     </div>
+
+  </div>
 
 </section>
 
@@ -811,42 +842,52 @@ footer {
 
 <section>
 
-    <div class="container">
+  <div class="container">
 
-        <h2 class="section-title">
-            Formação e desenvolvimento
-        </h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <strong>
-                    Curso Full Stack Python
-                </strong>
-
-                <span>
-                    Python · Backend · APIs · SQL · Desenvolvimento Web
-                </span>
-
-            </div>
+    <h2
+      class="section-title"
+      data-pt="Formação e desenvolvimento"
+      data-en="Education and development">
+      Formação e desenvolvimento
+    </h2>
 
 
-            <div class="timeline-item">
+    <div class="timeline">
 
-                <strong>
-                    Estudos contínuos em Backend
-                </strong>
+      <div class="timeline-item">
 
-                <span>
-                    FastAPI · SQLAlchemy · APIs REST · Git/GitHub · boas práticas
-                </span>
+        <strong>
+          Curso Full Stack Python
+        </strong>
 
-            </div>
+        <span
+          data-pt="Python · Backend · APIs · SQL · Desenvolvimento Web"
+          data-en="Python · Backend · APIs · SQL · Web Development">
+          Python · Backend · APIs · SQL · Desenvolvimento Web
+        </span>
 
-        </div>
+      </div>
+
+
+      <div class="timeline-item">
+
+        <strong
+          data-pt="Estudos contínuos em Backend"
+          data-en="Continuous Backend learning">
+          Estudos contínuos em Backend
+        </strong>
+
+        <span
+          data-pt="FastAPI · SQLAlchemy · APIs REST · Git/GitHub · boas práticas"
+          data-en="FastAPI · SQLAlchemy · REST APIs · Git/GitHub · best practices">
+          FastAPI · SQLAlchemy · APIs REST · Git/GitHub · boas práticas
+        </span>
+
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
@@ -855,64 +896,66 @@ footer {
 
 <section id="contato">
 
-    <div class="container">
+  <div class="container">
 
-        <div class="contact">
+    <div class="contact">
 
-            <div class="kicker">
-                Contato
-            </div>
+      <div
+        class="kicker"
+        data-pt="Contato"
+        data-en="Contact">
+        Contato
+      </div>
 
-            <h2 class="section-title">
-                Vamos conversar?
-            </h2>
+      <h2
+        class="section-title"
+        data-pt="Vamos conversar?"
+        data-en="Let's talk?">
+        Vamos conversar?
+      </h2>
 
-            <p
-                class="section-intro"
-                style="margin-left:auto;margin-right:auto">
+      <p
+        class="section-intro"
+        style="margin-left:auto;margin-right:auto"
+        data-pt="Estou buscando oportunidades na área de desenvolvimento Backend Python."
+        data-en="I'm looking for opportunities in Backend Python development.">
+        Estou buscando oportunidades na área de desenvolvimento Backend Python.
+      </p>
 
-                Estou buscando oportunidades na área de
-                desenvolvimento Backend Python.
 
-            </p>
+      <div
+        class="actions"
+        style="justify-content:center">
 
-            <div
-                class="actions"
-                style="justify-content:center">
+        <a
+          class="btn primary"
+          href="mailto:muniz_157@outlook.com"
+          data-pt="Enviar e-mail"
+          data-en="Send email">
+          Enviar e-mail
+        </a>
 
-                <a
-                    class="btn primary"
-                    href="mailto:muniz_157@outlook.com">
+        <a
+          class="btn"
+          href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
+          target="_blank"
+          rel="noopener">
+          LinkedIn
+        </a>
 
-                    Enviar e-mail
+        <a
+          class="btn"
+          href="https://github.com/NewErAM"
+          target="_blank"
+          rel="noopener">
+          GitHub
+        </a>
 
-                </a>
-
-                <a
-                    class="btn"
-                    href="https://www.linkedin.com/in/guilherme-muniz-8188a0247/"
-                    target="_blank"
-                    rel="noopener">
-
-                    LinkedIn
-
-                </a>
-
-                <a
-                    class="btn"
-                    href="https://github.com/NewErAM"
-                    target="_blank"
-                    rel="noopener">
-
-                    GitHub
-
-                </a>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
+
+  </div>
 
 </section>
 
@@ -921,13 +964,47 @@ footer {
 
 <footer>
 
-    <div class="container">
-
-        © 2026 Guilherme Muniz · Backend Python
-
-    </div>
+  <div class="container">
+    © 2026 Guilherme Muniz · Backend Python
+  </div>
 
 </footer>
+
+
+<script>
+
+const languageBtn =
+  document.getElementById("languageBtn");
+
+let currentLanguage = "pt";
+
+languageBtn.addEventListener("click", () => {
+
+  currentLanguage =
+    currentLanguage === "pt" ? "en" : "pt";
+
+  document.documentElement.lang =
+    currentLanguage === "pt"
+      ? "pt-BR"
+      : "en";
+
+  document
+    .querySelectorAll("[data-pt][data-en]")
+    .forEach((element) => {
+
+      element.textContent =
+        element.dataset[currentLanguage];
+
+    });
+
+  languageBtn.textContent =
+    currentLanguage === "pt"
+      ? "EN"
+      : "PT";
+
+});
+
+</script>
 
 </div>
 
