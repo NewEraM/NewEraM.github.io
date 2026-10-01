@@ -289,6 +289,25 @@ section {
   text-decoration:none;
 }
 
+/* EXEMPLOS DE CÓDIGO */
+
+.code-example {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  overflow:hidden;
+}
+
+.code-example pre {
+  width:100%;
+  max-width:100%;
+  min-width:0;
+  margin:0;
+  overflow:hidden;
+  white-space:pre-wrap;
+  overflow-wrap:anywhere;
+}
+
 .timeline {
   border-left:2px solid var(--border);
   padding-left:24px;
@@ -322,7 +341,10 @@ footer {
   font-size:.9rem;
 }
 
+/* CELULAR */
+
 @media (max-width:760px) {
+
   .nav-links {
     display:none;
   }
@@ -360,10 +382,20 @@ footer {
     width:250px;
   }
 
+  /* Código quebra verticalmente no celular */
+  .code-example pre {
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    font-size:.72rem !important;
+    padding:12px !important;
+  }
+
   section {
     padding:65px 0;
   }
 }
+
 </style>
 </head>
 
@@ -375,7 +407,7 @@ footer {
   <div class="container nav-inner">
 
     <div class="logo">
-      Guilherme Muniz<span>- NewEraM</span>
+      Guilherme<span>.</span>
     </div>
 
     <div class="nav-links">
@@ -383,25 +415,25 @@ footer {
       <a href="#sobre"
          data-pt="Sobre"
          data-en="About">
-         Sobre
+        Sobre
       </a>
 
       <a href="#habilidades"
          data-pt="Habilidades"
          data-en="Skills">
-         Habilidades
+        Habilidades
       </a>
 
       <a href="#projetos"
          data-pt="Projetos"
          data-en="Projects">
-         Projetos
+        Projetos
       </a>
 
       <a href="#contato"
          data-pt="Contato"
          data-en="Contact">
-         Contato
+        Contato
       </a>
 
       <button
@@ -416,10 +448,7 @@ footer {
   </div>
 </nav>
 
-
 <main>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -446,7 +475,8 @@ footer {
         <p
           data-pt="Desenvolvedor focado em backend, APIs REST e bancos de dados, com experiência prática em Python, FastAPI, SQL e Git/GitHub."
           data-en="Developer focused on backend development, REST APIs and databases, with practical experience in Python, FastAPI, SQL and Git/GitHub.">
-          Desenvolvedor focado em backend, APIs REST e bancos de dados, com experiência prática em Python, FastAPI, SQL e Git/GitHub.
+          Desenvolvedor focado em backend, APIs REST e bancos de dados,
+          com experiência prática em Python, FastAPI, SQL e Git/GitHub.
         </p>
 
         <div class="actions">
@@ -479,7 +509,6 @@ footer {
 
       </div>
 
-
       <div class="hero-photo">
 
         <img
@@ -494,8 +523,6 @@ footer {
 
 </section>
 
-
-<!-- SOBRE -->
 
 <section id="sobre">
 
@@ -512,9 +539,9 @@ footer {
       class="section-intro"
       data-pt="Desenvolvedor em formação contínua, com foco em desenvolvimento backend e interesse em engenharia de software, APIs e cloud."
       data-en="Developer continuously learning, focused on backend development and interested in software engineering, APIs and cloud.">
-      Desenvolvedor em formação contínua, com foco em desenvolvimento backend e interesse em engenharia de software, APIs e cloud.
+      Desenvolvedor em formação contínua, com foco em desenvolvimento backend
+      e interesse em engenharia de software, APIs e cloud.
     </p>
-
 
     <div class="about">
 
@@ -523,13 +550,17 @@ footer {
         <p
           data-pt="Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo projetos próprios para transformar conhecimento teórico em prática e aprimorar minha capacidade de resolver problemas."
           data-en="I have knowledge of Python, FastAPI, Pydantic, SQLAlchemy, SQL and Git/GitHub. I build personal projects to turn theory into practice and improve my problem-solving skills.">
-          Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo projetos próprios para transformar conhecimento teórico em prática e aprimorar minha capacidade de resolver problemas.
+          Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy,
+          SQL e Git/GitHub. Venho desenvolvendo projetos próprios para
+          transformar conhecimento teórico em prática e aprimorar minha
+          capacidade de resolver problemas.
         </p>
 
         <p
           data-pt="Meu objetivo é atuar profissionalmente com desenvolvimento de software, colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas."
           data-en="My goal is to work professionally in software development, collaborating with teams and growing in architecture, testing, cloud and best practices.">
-          Meu objetivo é atuar profissionalmente com desenvolvimento de software, colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas.
+          Meu objetivo é atuar profissionalmente com desenvolvimento de software,
+          colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas.
         </p>
 
       </div>
@@ -570,8 +601,6 @@ footer {
 </section>
 
 
-<!-- PROJETOS -->
-
 <section id="projetos">
 
   <div class="container">
@@ -587,14 +616,15 @@ footer {
       class="section-intro"
       data-pt="Meus principais projetos de backend, com foco em Python, FastAPI, APIs REST e desenvolvimento de software."
       data-en="My main backend projects, focused on Python, FastAPI, REST APIs and software development.">
-      Meus principais projetos de backend, com foco em Python, FastAPI, APIs REST e desenvolvimento de software.
+      Meus principais projetos de backend, com foco em Python,
+      FastAPI, APIs REST e desenvolvimento de software.
     </p>
 
 
     <div class="projects">
 
 
-      <!-- API TODO -->
+      <!-- API TODO LIST -->
 
       <article class="card">
 
@@ -605,25 +635,32 @@ footer {
         <p
           data-pt="API REST para gerenciamento de tarefas, desenvolvida para praticar conceitos de backend, organização de endpoints e operações de uma aplicação de tarefas."
           data-en="REST API for task management, developed to practice backend concepts, endpoint organization and task operations.">
-          API REST para gerenciamento de tarefas, desenvolvida para praticar conceitos de backend, organização de endpoints e operações de uma aplicação de tarefas.
+          API REST para gerenciamento de tarefas, desenvolvida para praticar
+          conceitos de backend, organização de endpoints e operações de uma
+          aplicação de tarefas.
         </p>
 
         <div class="tags">
+
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
           <span class="tag">SQLAlchemy</span>
           <span class="tag">SQLite</span>
+
         </div>
 
 
-        <pre
-          style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.get("/tarefas")
+        <div class="code-example">
+
+<pre style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow-x:auto;overflow-y:hidden;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.get("/tarefas")
 def get_tarefas(
     page: int = 1,
     limit: int = 10,
     db: Session = Depends(sessao_db),
 ):
     tarefas = db.query(TarefasDB).offset((page - 1) * limit).limit(limit).all()</code></pre>
+
+        </div>
 
 
         <a
@@ -651,12 +688,15 @@ def get_tarefas(
         <p
           data-pt="Trecho real da API To-Do List: autenticação HTTP Basic, acesso ao banco SQLite com SQLAlchemy e criação de tarefas com FastAPI."
           data-en="Real code from the To-Do List API: HTTP Basic authentication, SQLite database access with SQLAlchemy, and task creation with FastAPI.">
-          Trecho real da API To-Do List: autenticação HTTP Basic, acesso ao banco SQLite com SQLAlchemy e criação de tarefas com FastAPI.
+          Trecho real da API To-Do List: autenticação HTTP Basic,
+          acesso ao banco SQLite com SQLAlchemy e criação de tarefas
+          com FastAPI.
         </p>
 
 
-        <pre
-          style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow:auto;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.post("/adicionar_tarefas")
+        <div class="code-example">
+
+<pre style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow-x:auto;overflow-y:hidden;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.post("/adicionar_tarefas")
 def post_tarefa(
     tarefa: TarefaCreate,
     db: Session = Depends(sessao_db),
@@ -670,6 +710,8 @@ def post_tarefa(
     db.add(nova_tarefa)
     db.commit()
     db.refresh(nova_tarefa)</code></pre>
+
+        </div>
 
 
         <div class="tags">
@@ -705,7 +747,9 @@ def post_tarefa(
         <p
           data-pt="Projeto de estudos em FastAPI com desenvolvimento de APIs, modelos Pydantic, autenticação, SQLAlchemy e integração com banco de dados SQLite."
           data-en="FastAPI study project involving API development, Pydantic models, authentication, SQLAlchemy and SQLite database integration.">
-          Projeto de estudos em FastAPI com desenvolvimento de APIs, modelos Pydantic, autenticação, SQLAlchemy e integração com banco de dados SQLite.
+          Projeto de estudos em FastAPI com desenvolvimento de APIs,
+          modelos Pydantic, autenticação, SQLAlchemy e integração com
+          banco de dados SQLite.
         </p>
 
         <div class="tags">
@@ -775,7 +819,8 @@ def post_tarefa(
         <p
           data-pt="Aplicação para praticar gerenciamento de despesas e lógica de aplicações web."
           data-en="Application developed to practice expense management and web application logic.">
-          Aplicação para praticar gerenciamento de despesas e lógica de aplicações web.
+          Aplicação para praticar gerenciamento de despesas
+          e lógica de aplicações web.
         </p>
 
         <div class="tags">
@@ -798,7 +843,7 @@ def post_tarefa(
       </article>
 
 
-      <!-- JOGO -->
+      <!-- JOGO DE ADIVINHAÇÃO -->
 
       <article class="card">
 
@@ -809,7 +854,8 @@ def post_tarefa(
         <p
           data-pt="Projeto desenvolvido para praticar lógica de programação e interação com o usuário."
           data-en="Project developed to practice programming logic and user interaction.">
-          Projeto desenvolvido para praticar lógica de programação e interação com o usuário.
+          Projeto desenvolvido para praticar lógica de programação
+          e interação com o usuário.
         </p>
 
         <div class="tags">
@@ -838,8 +884,6 @@ def post_tarefa(
 </section>
 
 
-<!-- FORMAÇÃO -->
-
 <section>
 
   <div class="container">
@@ -850,7 +894,6 @@ def post_tarefa(
       data-en="Education and development">
       Formação e desenvolvimento
     </h2>
-
 
     <div class="timeline">
 
@@ -892,8 +935,6 @@ def post_tarefa(
 </section>
 
 
-<!-- CONTATO -->
-
 <section id="contato">
 
   <div class="container">
@@ -921,7 +962,6 @@ def post_tarefa(
         data-en="I'm looking for opportunities in Backend Python development.">
         Estou buscando oportunidades na área de desenvolvimento Backend Python.
       </p>
-
 
       <div
         class="actions"
@@ -973,8 +1013,7 @@ def post_tarefa(
 
 <script>
 
-const languageBtn =
-  document.getElementById("languageBtn");
+const languageBtn = document.getElementById("languageBtn");
 
 let currentLanguage = "pt";
 
@@ -984,9 +1023,7 @@ languageBtn.addEventListener("click", () => {
     currentLanguage === "pt" ? "en" : "pt";
 
   document.documentElement.lang =
-    currentLanguage === "pt"
-      ? "pt-BR"
-      : "en";
+    currentLanguage === "pt" ? "pt-BR" : "en";
 
   document
     .querySelectorAll("[data-pt][data-en]")
@@ -998,9 +1035,7 @@ languageBtn.addEventListener("click", () => {
     });
 
   languageBtn.textContent =
-    currentLanguage === "pt"
-      ? "EN"
-      : "PT";
+    currentLanguage === "pt" ? "EN" : "PT";
 
 });
 
