@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Guilherme Muniz | Backend Python</title>
-
-<style>
-:root {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Guilherme Muniz | Desenvolvedor Backend e Full Stack
+  </title>
+  <style>
+   :root {
   color-scheme: light dark;
   --bg: light-dark(#f7f8fa,#0d1117);
   --surface: light-dark(#ffffff,#151b23);
@@ -228,18 +229,47 @@ section {
 }
 
 .skills {
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
   gap:10px;
   align-content:start;
 }
 
 .skill {
-  padding:9px 13px;
+  min-width:0;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:11px 12px;
   border:1px solid var(--border);
-  border-radius:999px;
+  border-radius:12px;
   background:var(--surface);
-  font-size:.9rem;
+  font-size:.88rem;
+  line-height:1.35;
+}
+
+.skill img {
+  width:30px;
+  height:30px;
+  flex:0 0 30px;
+  object-fit:contain;
+  display:block;
+}
+.skill-groups { display:grid; gap:22px; }
+.skill-group h4 {
+  margin:0 0 10px;
+  color:var(--muted);
+  font-size:.92rem;
+  font-weight:700;
+}
+.skill-group .skills { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.skill { min-height:58px; font-weight:600; }
+@media (max-width:420px) {
+  .skill-group .skills { grid-template-columns:1fr; }
+}
+
+@media (max-width:420px) {
+  .skills { grid-template-columns:1fr; }
 }
 
 .projects {
@@ -395,308 +425,191 @@ footer {
     padding:65px 0;
   }
 }
+  
+/* EXEMPLOS DE CÓDIGO NOS PROJETOS */
+.project-example { margin-top: 18px; border-top: 1px solid var(--border); padding-top: 14px; }
+.project-example summary { cursor: pointer; color: var(--accent); font-weight: 700; font-size: .92rem; list-style: none; }
+.project-example summary::-webkit-details-marker { display:none; }
+.project-example summary::before { content: "+ "; }
+.project-example[open] summary::before { content: "− "; }
+.project-example pre { margin: 12px 0 0; padding: 15px; max-width:100%; overflow-x:auto; white-space:pre; background:#0d1117; color:#e6edf3; border:1px solid #303943; border-radius:10px; font: .78rem/1.55 Consolas,Monaco,monospace; }
+.project-example code { font-family:inherit; }
+@media(max-width:760px){ .project-example pre { font-size:.68rem; } }
 
-</style>
-</head>
-
-<body>
-
-<div id="app">
-
-<nav>
-  <div class="container nav-inner">
-
-    <div class="logo">
-      Guilherme Muniz<span>.NewEraM</span>
-    </div>
-
-    <div class="nav-links">
-
-      <a href="#sobre"
-         data-pt="Sobre"
-         data-en="About">
-        Sobre
+ </style>
+ </head>
+ <body>
+  <div id="app">
+   <nav>
+    <div class="container nav-inner">
+     <div class="logo">
+      Guilherme Muniz
+      <span>
+       .NewEraM
+      </span>
+     </div>
+     <div class="nav-links">
+      <a data-en="About" data-pt="Sobre" href="#sobre">
+       Sobre
       </a>
-
-      <a href="#habilidades"
-         data-pt="Habilidades"
-         data-en="Skills">
-        Habilidades
+      <a data-en="Skills" data-pt="Habilidades" href="#habilidades">
+       Habilidades
       </a>
-
-      <a href="#projetos"
-         data-pt="Projetos"
-         data-en="Projects">
-        Projetos
+      <a data-en="Projects" data-pt="Projetos" href="#projetos">
+       Projetos
       </a>
-
-      <a href="#contato"
-         data-pt="Contato"
-         data-en="Contact">
-        Contato
+      <a data-en="Contact" data-pt="Contato" href="#contato">
+       Contato
       </a>
-
-      <button
-        class="lang-btn"
-        id="languageBtn"
-        type="button">
-        EN
+      <button class="lang-btn" id="languageBtn" type="button">
+       EN
       </button>
-
+     </div>
     </div>
-
-  </div>
-</nav>
-
-<main>
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="hero-grid">
-
-      <div class="hero-copy">
-
+   </nav>
+   <main>
+    <section class="hero">
+     <div class="container">
+      <div class="hero-grid">
+       <div class="hero-copy">
         <div class="kicker">
-          Backend Python
+         Backend Python &middot; Desenvolvimento de Software
         </div>
-
         <h1>
-          <span
-            data-pt="Construindo soluções com"
-            data-en="Building solutions with">
-            Construindo soluções com
-          </span>
-
-          <span>Python</span>.
+         <span data-en="Building solutions with" data-pt="Construindo solu&ccedil;&otilde;es com">
+          Construindo solu&ccedil;&otilde;es com
+         </span>
+         <span>
+          Python
+         </span>
+         .
         </h1>
-
-        <p
-          data-pt="Desenvolvedor focado em backend, APIs REST e bancos de dados, com experiência prática em Python, FastAPI, SQL e Git/GitHub."
-          data-en="Developer focused on backend development, REST APIs and databases, with practical experience in Python, FastAPI, SQL and Git/GitHub.">
-          Desenvolvedor focado em backend, APIs REST e bancos de dados,
-          com experiência prática em Python, FastAPI, SQL e Git/GitHub.
+        <p data-en="Developer continuously learning, with practical experience building APIs, integrating services, automating tasks and developing web applications." data-pt="Desenvolvedor em forma&ccedil;&atilde;o cont&iacute;nua, com experi&ecirc;ncia pr&aacute;tica na constru&ccedil;&atilde;o de APIs, integra&ccedil;&atilde;o de servi&ccedil;os, automa&ccedil;&atilde;o de tarefas e aplica&ccedil;&otilde;es web.">
+         Desenvolvedor em forma&ccedil;&atilde;o cont&iacute;nua, com experi&ecirc;ncia pr&aacute;tica na constru&ccedil;&atilde;o de APIs, integra&ccedil;&atilde;o de servi&ccedil;os, automa&ccedil;&atilde;o de tarefas e aplica&ccedil;&otilde;es web.
         </p>
-
         <div class="actions">
-
-          <a
-            class="btn primary"
-            href="#projetos"
-            data-pt="Ver projetos"
-            data-en="View projects">
-            Ver projetos
-          </a>
-
-          <a
-            class="btn"
-            href="https://github.com/NewErAM"
-            target="_blank"
-            rel="noopener">
-            GitHub
-          </a>
-
-          <a
-            class="btn"
-            href="https://www.linkedin.com/in/guilherme-muniz-dev/"
-            target="_blank"
-            rel="noopener">
-            LinkedIn
-          </a>
-
+         <a class="btn primary" data-en="View projects" data-pt="Ver projetos" href="#projetos">
+          Ver projetos
+         </a>
+         <a class="btn" href="https://github.com/NewEraM" rel="noopener" target="_blank">
+          GitHub
+         </a>
+         <a class="btn" href="https://www.linkedin.com/in/guilherme-muniz-dev/" rel="noopener" target="_blank">
+          LinkedIn
+         </a>
         </div>
-
+       </div>
+       <div class="hero-photo">
+        <img alt="Foto profissional de Guilherme Muniz" src="Eu.png"/>
+       </div>
       </div>
-
-      <div class="hero-photo">
-
-        <img
-          src="Eu.png"
-          alt="Foto profissional de Guilherme Muniz">
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section id="sobre">
-
-  <div class="container">
-
-    <h2
-      class="section-title"
-      data-pt="Sobre mim"
-      data-en="About me">
-      Sobre mim
-    </h2>
-
-    <p
-      class="section-intro"
-      data-pt="Desenvolvedor em formação contínua, com foco em desenvolvimento backend e interesse em engenharia de software, APIs e cloud."
-      data-en="Developer continuously learning, focused on backend development and interested in software engineering, APIs and cloud.">
-      Desenvolvedor em formação contínua, com foco em desenvolvimento backend
-      e interesse em engenharia de software, APIs e cloud.
-    </p>
-
-    <div class="about">
-
-      <div>
-
-        <p
-          data-pt="Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy, SQL e Git/GitHub. Venho desenvolvendo projetos próprios para transformar conhecimento teórico em prática e aprimorar minha capacidade de resolver problemas."
-          data-en="I have knowledge of Python, FastAPI, Pydantic, SQLAlchemy, SQL and Git/GitHub. I build personal projects to turn theory into practice and improve my problem-solving skills.">
-          Tenho conhecimentos em Python, FastAPI, Pydantic, SQLAlchemy,
-          SQL e Git/GitHub. Venho desenvolvendo projetos próprios para
-          transformar conhecimento teórico em prática e aprimorar minha
-          capacidade de resolver problemas.
+     </div>
+    </section>
+    <section id="sobre">
+     <div class="container">
+      <h2 class="section-title" data-en="About me" data-pt="Sobre mim">
+       Sobre mim
+      </h2>
+      <p class="section-intro" data-en="Developer focused on Python backend, with hands-on experience in APIs, data persistence, authentication, messaging, asynchronous processing and web interfaces." data-pt="Desenvolvedor com foco em backend Python e experi&ecirc;ncia pr&aacute;tica em projetos que envolvem APIs, persist&ecirc;ncia de dados, autentica&ccedil;&atilde;o, mensageria, processamento ass&iacute;ncrono e interfaces web.">
+       Desenvolvedor com foco em backend Python e experi&ecirc;ncia pr&aacute;tica em projetos que envolvem APIs, persist&ecirc;ncia de dados, autentica&ccedil;&atilde;o, mensageria, processamento ass&iacute;ncrono e interfaces web.
+      </p>
+      <div class="about">
+       <div>
+        <p data-en="I have built applications ranging from REST APIs for managing books and tasks to web projects with product catalogs, filters and shopping carts. I have also practiced HTTP Basic authentication, data validation, pagination, relational database integration, Redis caching and background task execution with Celery." data-pt="Tenho desenvolvido aplica&ccedil;&otilde;es que v&atilde;o desde APIs REST para gerenciamento de livros e tarefas at&eacute; projetos web com cat&aacute;logo de produtos, filtros e carrinho de compras. Tamb&eacute;m pratiquei autentica&ccedil;&atilde;o HTTP Basic, valida&ccedil;&atilde;o de dados, pagina&ccedil;&atilde;o, integra&ccedil;&atilde;o com bancos relacionais, cache com Redis e execu&ccedil;&atilde;o de tarefas em segundo plano com Celery.">
+         Tenho desenvolvido aplica&ccedil;&otilde;es que v&atilde;o desde APIs REST para gerenciamento de livros e tarefas at&eacute; projetos web com cat&aacute;logo de produtos, filtros e carrinho de compras. Tamb&eacute;m pratiquei autentica&ccedil;&atilde;o HTTP Basic, valida&ccedil;&atilde;o de dados, pagina&ccedil;&atilde;o, integra&ccedil;&atilde;o com bancos relacionais, cache com Redis e execu&ccedil;&atilde;o de tarefas em segundo plano com Celery.
         </p>
-
-        <p
-          data-pt="Meu objetivo é atuar profissionalmente com desenvolvimento de software, colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas."
-          data-en="My goal is to work professionally in software development, collaborating with teams and growing in architecture, testing, cloud and best practices.">
-          Meu objetivo é atuar profissionalmente com desenvolvimento de software,
-          colaborando com equipes e evoluindo em arquitetura, testes, cloud e boas práticas.
+        <p data-en="In infrastructure projects, I configured environments with Docker Compose and Podman, including Kafka, ZooKeeper, Kafka-UI and Redis. I have also practiced automated testing with Pytest, interface development with React and Vite, and application development with HTML, CSS and JavaScript." data-pt="Nos projetos de infraestrutura, configurei ambientes com Docker Compose e Podman, incluindo Kafka, ZooKeeper, Kafka-UI e Redis. Tamb&eacute;m venho praticando testes automatizados com Pytest, desenvolvimento de interfaces com React e Vite e constru&ccedil;&atilde;o de aplica&ccedil;&otilde;es com HTML, CSS e JavaScript.">
+         Nos projetos de infraestrutura, configurei ambientes com Docker Compose e Podman, incluindo Kafka, ZooKeeper, Kafka-UI e Redis. Tamb&eacute;m venho praticando testes automatizados com Pytest, desenvolvimento de interfaces com React e Vite e constru&ccedil;&atilde;o de aplica&ccedil;&otilde;es com HTML, CSS e JavaScript.
         </p>
-
-      </div>
-
-
-      <div id="habilidades">
-
-        <h3
-          data-pt="Habilidades"
-          data-en="Skills">
-          Habilidades
-        </h3>
-
-        <div class="skills">
-
-          <span class="skill">Python</span>
-          <span class="skill">FastAPI</span>
-          <span class="skill">APIs REST</span>
-          <span class="skill">Pydantic</span>
-          <span class="skill">SQL</span>
-          <span class="skill">SQLAlchemy</span>
-          <span class="skill">SQLite</span>
-          <span class="skill">Git</span>
-          <span class="skill">GitHub</span>
-          <span class="skill">HTML5</span>
-          <span class="skill">CSS3</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">React</span>
-
+       </div>
+       <div id="habilidades">
+         <h3 data-en="Technologies and practical skills" data-pt="Tecnologias e conhecimentos aplicados">Tecnologias e conhecimentos aplicados</h3>
+         <div class="skill-groups">
+          <div class="skill-group">
+           <h4 data-en="Backend and databases" data-pt="Backend e bancos de dados">Backend e bancos de dados</h4>
+           <div class="skills">
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" loading="lazy"><span>Python</span></span>
+            <span class="skill"><img src="https://cdn.simpleicons.org/fastapi/009688" alt="FastAPI" loading="lazy"><span>FastAPI</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" alt="SQLAlchemy" loading="lazy"><span>SQLAlchemy</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" alt="SQLite" loading="lazy"><span>SQLite</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" loading="lazy"><span>Redis</span></span>
+            <span class="skill"><img src="https://cdn.simpleicons.org/celery/37814A" alt="Celery" loading="lazy"><span>Celery</span></span>
+            <span class="skill"><img src="https://cdn.simpleicons.org/pytest/0A9EDC" alt="Pytest" loading="lazy"><span>Pytest</span></span>
+           </div>
+          </div>
+          <div class="skill-group">
+           <h4 data-en="Infrastructure and messaging" data-pt="Infraestrutura e mensageria">Infraestrutura e mensageria</h4>
+           <div class="skills">
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" loading="lazy"><span>Docker / Compose</span></span>
+            <span class="skill"><img src="https://cdn.simpleicons.org/podman/892CA0" alt="Podman" loading="lazy"><span>Podman</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Apache Kafka" loading="lazy"><span>Apache Kafka</span></span>
+            <span class="skill"><img src="https://cdn.simpleicons.org/apachezookeeper/FFFFFF" alt="ZooKeeper" loading="lazy"><span>ZooKeeper</span></span>
+           </div>
+          </div>
+          <div class="skill-group">
+           <h4 data-en="Frontend and web" data-pt="Frontend e desenvolvimento web">Frontend e desenvolvimento web</h4>
+           <div class="skills">
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" loading="lazy"><span>HTML5</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" loading="lazy"><span>CSS3</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" loading="lazy"><span>JavaScript</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" loading="lazy"><span>React</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" alt="Vite" loading="lazy"><span>Vite</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" loading="lazy"><span>Bootstrap</span></span>
+           </div>
+          </div>
+          <div class="skill-group">
+           <h4 data-en="Development tools" data-pt="Ferramentas de desenvolvimento">Ferramentas de desenvolvimento</h4>
+           <div class="skills">
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" loading="lazy"><span>Git</span></span>
+            <span class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" loading="lazy"><span>GitHub</span></span>
+           </div>
+          </div>
+         </div>
         </div>
-
+       </div>
       </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section id="projetos">
-
-  <div class="container">
-
-    <h2
-      class="section-title"
-      data-pt="Projetos em destaque"
-      data-en="Featured projects">
-      Projetos em destaque
-    </h2>
-
-    <p
-      class="section-intro"
-      data-pt="Meus principais projetos de backend, com foco em Python, FastAPI, APIs REST e desenvolvimento de software."
-      data-en="My main backend projects, focused on Python, FastAPI, REST APIs and software development.">
-      Meus principais projetos de backend, com foco em Python,
-      FastAPI, APIs REST e desenvolvimento de software.
-    </p>
-
-
-    <div class="projects">
-
-
-      <!-- API TODO LIST -->
-
-      <article class="card">
-
+     </div>
+    </section>
+    <section id="projetos">
+     <div class="container">
+      <h2 class="section-title" data-en="Featured projects" data-pt="Projetos em destaque">
+       Projetos em destaque
+      </h2>
+      <p class="section-intro" data-en="Projects organized by the problems solved and features implemented, highlighting hands-on backend, infrastructure and web application development." data-pt="Projetos organizados pelo problema resolvido e pelas funcionalidades implementadas, destacando experi&ecirc;ncias pr&aacute;ticas de desenvolvimento backend, infraestrutura e aplica&ccedil;&otilde;es web.">
+       Projetos organizados pelo problema resolvido e pelas funcionalidades implementadas, destacando experi&ecirc;ncias pr&aacute;ticas de desenvolvimento backend, infraestrutura e aplica&ccedil;&otilde;es web.
+      </p>
+      <div class="projects">
+       <article class="card">
         <h3>
-          API To-Do List ⭐
+         API To-Do List
         </h3>
-
-        <p
-          data-pt="API REST para gerenciamento de tarefas, desenvolvida para praticar conceitos de backend, organização de endpoints e operações de uma aplicação de tarefas."
-          data-en="REST API for task management, developed to practice backend concepts, endpoint organization and task operations.">
-          API REST para gerenciamento de tarefas, desenvolvida para praticar
-          conceitos de backend, organização de endpoints e operações de uma
-          aplicação de tarefas.
+        <p>
+         API para gerenciamento de tarefas com cria&ccedil;&atilde;o, consulta por identificador, atualiza&ccedil;&atilde;o e exclus&atilde;o. Inclui pagina&ccedil;&atilde;o, valida&ccedil;&atilde;o dos dados, preven&ccedil;&atilde;o de nomes duplicados, autentica&ccedil;&atilde;o HTTP Basic e persist&ecirc;ncia em banco SQLite.
         </p>
-
         <div class="tags">
-
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">SQLAlchemy</span>
-          <span class="tag">SQLite</span>
-
+         <span class="tag">
+          CRUD de tarefas
+         </span>
+         <span class="tag">
+          Autentica&ccedil;&atilde;o
+         </span>
+         <span class="tag">
+          Pagina&ccedil;&atilde;o
+         </span>
+         <span class="tag">
+          Valida&ccedil;&atilde;o
+         </span>
+         <span class="tag">
+          Persist&ecirc;ncia de dados
+         </span>
         </div>
-
-
-        <div class="code-example">
-
-<pre style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow-x:auto;overflow-y:hidden;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.get("/tarefas")
-def get_tarefas(
-    page: int = 1,
-    limit: int = 10,
-    db: Session = Depends(sessao_db),
-):
-    tarefas = db.query(TarefasDB).offset((page - 1) * limit).limit(limit).all()</code></pre>
-
-        </div>
-
-
-        <a
-          href="https://github.com/NewEraM/API_To-Do-List/blob/master/ToDoList.py"
-          target="_blank"
-          rel="noopener"
-          data-pt="Ver exemplo completo →"
-          data-en="View full example →">
-          Ver exemplo completo →
+        <a href="https://github.com/NewEraM/API_To-Do-List" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
         </a>
-
-      </article>
-
-
-      <!-- CODIGO EM DESTAQUE -->
-
-      <article class="card">
-
-        <h3
-          data-pt="Código em destaque"
-          data-en="Featured code">
-          Código em destaque
-        </h3>
-
-        <p
-          data-pt="Trecho real da API To-Do List: autenticação HTTP Basic, acesso ao banco SQLite com SQLAlchemy e criação de tarefas com FastAPI."
-          data-en="Real code from the To-Do List API: HTTP Basic authentication, SQLite database access with SQLAlchemy, and task creation with FastAPI.">
-          Trecho real da API To-Do List: autenticação HTTP Basic,
-          acesso ao banco SQLite com SQLAlchemy e criação de tarefas
-          com FastAPI.
-        </p>
-
-
-        <div class="code-example">
-
-<pre style="background:#0d1117;color:#f0f3f6;border:1px solid var(--border);border-radius:12px;padding:16px;overflow-x:auto;overflow-y:hidden;font-size:.78rem;line-height:1.55;text-align:left"><code>@app.post("/adicionar_tarefas")
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-python">@app.post(&quot;/adicionar_tarefas&quot;)
 def post_tarefa(
     tarefa: TarefaCreate,
     db: Session = Depends(sessao_db),
@@ -709,311 +622,384 @@ def post_tarefa(
     )
     db.add(nova_tarefa)
     db.commit()
-    db.refresh(nova_tarefa)</code></pre>
-
-        </div>
-
-
-        <div class="tags">
-
-          <span class="tag">FastAPI</span>
-          <span class="tag">SQLAlchemy</span>
-          <span class="tag">SQLite</span>
-          <span class="tag">HTTP Basic</span>
-
-        </div>
-
-
-        <a
-          href="https://github.com/NewEraM/API_To-Do-List/blob/master/ToDoList.py"
-          target="_blank"
-          rel="noopener"
-          data-pt="Ver código completo →"
-          data-en="View full code →">
-          Ver código completo →
-        </a>
-
-      </article>
-
-
-      <!-- FASTAPI EBAC -->
-
-      <article class="card">
-
+    db.refresh(nova_tarefa)
+    return {&quot;message&quot;: &quot;A tarefa foi criada com sucesso!&quot;}</code></pre>
+        </details>
+</article>
+       <article class="card">
         <h3>
-          FastApi-Ebac ⭐
+         API de gerenciamento de livros
         </h3>
-
-        <p
-          data-pt="Projeto de estudos em FastAPI com desenvolvimento de APIs, modelos Pydantic, autenticação, SQLAlchemy e integração com banco de dados SQLite."
-          data-en="FastAPI study project involving API development, Pydantic models, authentication, SQLAlchemy and SQLite database integration.">
-          Projeto de estudos em FastAPI com desenvolvimento de APIs,
-          modelos Pydantic, autenticação, SQLAlchemy e integração com
-          banco de dados SQLite.
+        <p>
+         Aplica&ccedil;&atilde;o backend para cadastrar, consultar, atualizar e excluir livros. Implementa autentica&ccedil;&atilde;o, pagina&ccedil;&atilde;o, persist&ecirc;ncia com SQLAlchemy e SQLite e cache de consultas com Redis, incluindo invalida&ccedil;&atilde;o de cache ap&oacute;s altera&ccedil;&otilde;es.
         </p>
-
         <div class="tags">
-
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Pydantic</span>
-          <span class="tag">SQLAlchemy</span>
-          <span class="tag">SQLite</span>
-
+         <span class="tag">
+          CRUD de livros
+         </span>
+         <span class="tag">
+          SQLAlchemy
+         </span>
+         <span class="tag">
+          SQLite
+         </span>
+         <span class="tag">
+          Redis Cache
+         </span>
+         <span class="tag">
+          HTTP Basic
+         </span>
         </div>
-
-        <a
-          href="https://github.com/NewErAM/FastApi-Ebac"
-          target="_blank"
-          rel="noopener"
-          data-pt="Ver no GitHub →"
-          data-en="View on GitHub →">
-          Ver no GitHub →
+        <a href="https://github.com/NewEraM/FastApi-Ebac" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
         </a>
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-python">@app.get(&quot;/livros&quot;)
+def get_livros(
+    page: int = 1,
+    limit: int = 10,
+    db: Session = Depends(sessao_db),
+    credentials: HTTPBasicCredentials = Depends(autenticar_meu_user),
+):
+    cache_key = f&quot;livros:page={page}&amp;limit={limit}&quot;
+    cached = redis_client.get(cache_key)
 
-      </article>
+    if cached:
+        return json.loads(cached)
 
-
-      <!-- CALCULADORA IMC -->
-
-      <article class="card">
-
+    livros = db.query(LivroDB).offset((page - 1) * limit).limit(limit).all()
+    # A resposta é armazenada no Redis por 60 segundos
+    redis_client.setex(cache_key, 60, json.dumps(resposta))
+    return resposta</code></pre>
+        </details>
+</article>
+       <article class="card">
         <h3>
-          Calculadora IMC
+         Processamento ass&iacute;ncrono com Celery
         </h3>
-
-        <p
-          data-pt="Projeto para praticar lógica de programação e desenvolvimento web."
-          data-en="Project developed to practice programming logic and web development.">
-          Projeto para praticar lógica de programação e desenvolvimento web.
+        <p>
+         Implementa&ccedil;&atilde;o de tarefas em segundo plano para opera&ccedil;&otilde;es de soma e c&aacute;lculo de fatorial, com tratamento de entrada inv&aacute;lida e consulta de resultados das tarefas.
         </p>
-
         <div class="tags">
-
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-
+         <span class="tag">
+          Tasks Celery
+         </span>
+         <span class="tag">
+          Execu&ccedil;&atilde;o ass&iacute;ncrona
+         </span>
+         <span class="tag">
+          Tratamento de erros
+         </span>
         </div>
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-python">@celery_app.task(name="tasks.fatorial")
+def fatorial(n):
+    if n &lt; 0:
+        raise ValueError("O número deve ser maior ou igual a zero")
 
-        <a
-          href="https://github.com/NewErAM/calculadoraIMC"
-          target="_blank"
-          rel="noopener"
-          data-pt="Ver no GitHub →"
-          data-en="View on GitHub →">
-          Ver no GitHub →
+    resultado = 1
+    for i in range(2, n + 1):
+        resultado *= i
+
+    return resultado
+
+# Envio da tarefa para execução em segundo plano
+tarefa = fatorial.delay(5)</code></pre>
+        </details>
+        <a href="https://github.com/NewEraM/FastApi-Ebac" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
         </a>
-
-      </article>
-
-
-      <!-- CONTROLE DE GASTOS -->
-
-      <article class="card">
-
+       </article>
+       <article class="card">
         <h3>
-          Controle de Gastos
+         Mensageria com Apache Kafka
         </h3>
-
-        <p
-          data-pt="Aplicação para praticar gerenciamento de despesas e lógica de aplicações web."
-          data-en="Application developed to practice expense management and web application logic.">
-          Aplicação para praticar gerenciamento de despesas
-          e lógica de aplicações web.
+        <p>
+         Configura&ccedil;&atilde;o de ambiente de mensageria com Kafka, ZooKeeper e Kafka-UI. O projeto tamb&eacute;m contempla integra&ccedil;&atilde;o de produtor Kafka &agrave; aplica&ccedil;&atilde;o de livros e orquestra&ccedil;&atilde;o dos servi&ccedil;os por cont&ecirc;ineres.
         </p>
-
         <div class="tags">
-
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-
+         <span class="tag">
+          Kafka
+         </span>
+         <span class="tag">
+          ZooKeeper
+         </span>
+         <span class="tag">
+          Kafka-UI
+         </span>
+         <span class="tag">
+          Docker Compose
+         </span>
+         <span class="tag">
+          Podman
+         </span>
         </div>
-
-        <a
-          href="https://github.com/NewErAM/calculadorControleGastos"
-          target="_blank"
-          rel="noopener"
-          data-pt="Ver no GitHub →"
-          data-en="View on GitHub →">
-          Ver no GitHub →
+        <a href="https://github.com/NewEraM/FastApi-Ebac" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
         </a>
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-python">def enviar_evento(topico: str, evento: dict):
+    prod = ger_producer()
+    prod.send(topico, evento)
+    prod.flush()
 
-      </article>
-
-
-      <!-- JOGO DE ADIVINHAÇÃO -->
-
-      <article class="card">
-
+# Na API, após cadastrar um livro:
+enviar_evento(&quot;livros_eventos&quot;, {
+    &quot;acao&quot;: &quot;criar&quot;,
+    &quot;livro&quot;: livro.model_dump()
+})</code></pre>
+        </details>
+</article>
+       <article class="card">
         <h3>
-          Jogo de Adivinhação
+         Lua Mimos e Artesanatos
         </h3>
-
-        <p
-          data-pt="Projeto desenvolvido para praticar lógica de programação e interação com o usuário."
-          data-en="Project developed to practice programming logic and user interaction.">
-          Projeto desenvolvido para praticar lógica de programação
-          e interação com o usuário.
+        <p>
+         Site de apresenta&ccedil;&atilde;o e loja virtual com p&aacute;ginas de produtos, categorias e contato. Inclui busca e filtros de produtos, carrinho com quantidades e total, al&eacute;m de formul&aacute;rio que prepara a mensagem para envio pelo WhatsApp.
         </p>
-
         <div class="tags">
-
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-
+         <span class="tag">
+          Cat&aacute;logo de produtos
+         </span>
+         <span class="tag">
+          Filtros e busca
+         </span>
+         <span class="tag">
+          Carrinho de compras
+         </span>
+         <span class="tag">
+          Formul&aacute;rio
+         </span>
+         <span class="tag">
+          Layout responsivo
+         </span>
         </div>
-
-        <a
-          href="https://github.com/NewErAM/jogoAdivinhacao"
-          target="_blank"
-          rel="noopener"
-          data-pt="Ver no GitHub →"
-          data-en="View on GitHub →">
-          Ver no GitHub →
+        <a href="https://github.com/NewEraM?tab=repositories" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
         </a>
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-javascript">// Busca por nome e filtro por categoria
+function applyFilters() {
+  const search = searchInput.value
+    .trim()
+    .toLocaleLowerCase(&quot;pt-BR&quot;);
 
-      </article>
+  productCards.forEach(column =&gt; {
+    const product = column.querySelector(&quot;.product-card&quot;);
+    const name = product.dataset.name.toLocaleLowerCase(&quot;pt-BR&quot;);
+    const categories = product.dataset.categories.split(&quot; &quot;);
 
-    </div>
+    const matchesCategory = activeCategory === &quot;all&quot; ||
+      categories.includes(activeCategory);
+    const matchesSearch = name.includes(search);
 
-  </div>
+    column.hidden = !(matchesCategory &amp;&amp; matchesSearch);
+  });
+}</code></pre>
+        </details>
+</article>
+       <article class="card">
+        <h3>
+         Aplica&ccedil;&otilde;es web interativas
+        </h3>
+        <p>
+         Conjunto de projetos pr&aacute;ticos com calculadora de IMC, controle de gastos e jogo de adivinha&ccedil;&atilde;o. Trabalham entrada de dados, valida&ccedil;&otilde;es, c&aacute;lculos, atualiza&ccedil;&atilde;o da interface e intera&ccedil;&atilde;o com o usu&aacute;rio.
+        </p>
+        <div class="tags">
+         <span class="tag">
+          Manipula&ccedil;&atilde;o do DOM
+         </span>
+         <span class="tag">
+          Eventos
+         </span>
+         <span class="tag">
+          Valida&ccedil;&atilde;o
+         </span>
+         <span class="tag">
+          L&oacute;gica de aplica&ccedil;&atilde;o
+         </span>
+        </div>
+        <a href="https://github.com/NewEraM?tab=repositories" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
+        </a>
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-javascript">// Exemplo de cálculo e atualização da interface
+function calcularIMC() {
+  const peso = Number(document.getElementById(&quot;peso&quot;).value);
+  const altura = Number(document.getElementById(&quot;altura&quot;).value);
 
-</section>
+  if (peso &lt;= 0 || altura &lt;= 0) {
+    resultado.textContent = &quot;Informe valores válidos.&quot;;
+    return;
+  }
+
+  const imc = peso / (altura * altura);
+  resultado.textContent = `Seu IMC é ${imc.toFixed(2)}`;
+}</code></pre>
+        </details>
+</article>
+       <article class="card">
+        <h3>
+         Aplica&ccedil;&atilde;o de produtos com React
+        </h3>
+        <p>
+         Projeto de estudos com componentes reutiliz&aacute;veis, passagem de propriedades, listagem din&acirc;mica de produtos, formul&aacute;rio controlado e gerenciamento de estado. Tamb&eacute;m pratica carregamento simulado de dados.
+        </p>
+        <div class="tags">
+         <span class="tag">
+          Componentes reutiliz&aacute;veis
+         </span>
+         <span class="tag">
+          Estado
+         </span>
+         <span class="tag">
+          Props
+         </span>
+         <span class="tag">
+          Formul&aacute;rios controlados
+         </span>
+        </div>
+        <a href="https://github.com/NewEraM?tab=repositories" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
+        </a>
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de componente" data-en="View code example">Ver exemplo de componente</summary>
+         <pre><code class="language-jsx">function ProdutoCard({ nome, preco, descricao }) {
+  return (
+    &lt;article className=&quot;produto-card&quot;&gt;
+      &lt;h2&gt;{nome}&lt;/h2&gt;
+      &lt;p&gt;{descricao}&lt;/p&gt;
+      &lt;strong&gt;R$ {preco}&lt;/strong&gt;
+    &lt;/article&gt;
+  );
+}
+
+// A lista é renderizada a partir do estado:
+{produtos.map(produto =&gt; (
+  &lt;ProdutoCard key={produto.id} {...produto} /&gt;
+))}</code></pre>
+        </details>
+</article>
+       <article class="card">
+        <h3>
+         Testes automatizados
+        </h3>
+        <p>
+         Pr&aacute;tica de testes unit&aacute;rios para fun&ccedil;&otilde;es Python e tarefas Celery, verificando resultados esperados, limites e tratamento de entradas inv&aacute;lidas.
+        </p>
+        <div class="tags">
+         <span class="tag">
+          Pytest
+         </span>
+         <span class="tag">
+          Testes unit&aacute;rios
+         </span>
+         <span class="tag">
+          Asser&ccedil;&otilde;es
+         </span>
+         <span class="tag">
+          Casos de teste
+         </span>
+        </div>
+        <a href="https://github.com/NewEraM/FastApi-Ebac" rel="noopener" target="_blank">
+         Ver projeto no GitHub &rarr;
+        </a>
+       
+        <details class="project-example">
+         <summary data-pt="Ver exemplo de código" data-en="View code example">Ver exemplo de código</summary>
+         <pre><code class="language-python">from tasks import somar, fatorial
 
 
-<section>
+def test_somar():
+    resultado = somar.apply(args=[5, 3]).get()
+    assert resultado == 8
 
-  <div class="container">
 
-    <h2
-      class="section-title"
-      data-pt="Formação e desenvolvimento"
-      data-en="Education and development">
-      Formação e desenvolvimento
-    </h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item">
-
-        <strong>
-          Curso Full Stack Python
-        </strong>
-
-        <span
-          data-pt="Python · Backend · APIs · SQL · Desenvolvimento Web"
-          data-en="Python · Backend · APIs · SQL · Web Development">
-          Python · Backend · APIs · SQL · Desenvolvimento Web
-        </span>
-
+def test_fatorial():
+    resultado = fatorial.apply(args=[5]).get()
+    assert resultado == 120</code></pre>
+        </details>
+</article>
       </div>
-
-
-      <div class="timeline-item">
-
-        <strong
-          data-pt="Estudos contínuos em Backend"
-          data-en="Continuous Backend learning">
-          Estudos contínuos em Backend
-        </strong>
-
-        <span
-          data-pt="FastAPI · SQLAlchemy · APIs REST · Git/GitHub · boas práticas"
-          data-en="FastAPI · SQLAlchemy · REST APIs · Git/GitHub · best practices">
-          FastAPI · SQLAlchemy · APIs REST · Git/GitHub · boas práticas
-        </span>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section id="contato">
-
-  <div class="container">
-
-    <div class="contact">
-
-      <div
-        class="kicker"
-        data-pt="Contato"
-        data-en="Contact">
-        Contato
-      </div>
-
-      <h2
-        class="section-title"
-        data-pt="Vamos conversar?"
-        data-en="Let's talk?">
-        Vamos conversar?
+     </div>
+    </section>
+    <section>
+     <div class="container">
+      <h2 class="section-title" data-en="Education and development" data-pt="Forma&ccedil;&atilde;o e desenvolvimento">
+       Forma&ccedil;&atilde;o e desenvolvimento
       </h2>
-
-      <p
-        class="section-intro"
-        style="margin-left:auto;margin-right:auto"
-        data-pt="Estou buscando oportunidades na área de desenvolvimento Backend Python."
-        data-en="I'm looking for opportunities in Backend Python development.">
-        Estou buscando oportunidades na área de desenvolvimento Backend Python.
-      </p>
-
-      <div
-        class="actions"
-        style="justify-content:center">
-
-        <a
-          class="btn primary"
-          href="mailto:muniz_157@outlook.com"
-          data-pt="Enviar e-mail"
-          data-en="Send email">
-          Enviar e-mail
-        </a>
-
-        <a
-          class="btn"
-          href="https://www.linkedin.com/in/guilherme-muniz-dev/"
-          target="_blank"
-          rel="noopener">
-          LinkedIn
-        </a>
-
-        <a
-          class="btn"
-          href="https://github.com/NewErAM"
-          target="_blank"
-          rel="noopener">
-          GitHub
-        </a>
-
+      <div class="timeline">
+       <div class="timeline-item">
+        <strong>
+         Curso Full Stack Python
+        </strong>
+        <span data-en="Backend development &middot; REST APIs &middot; Databases &middot; Web applications" data-pt="Desenvolvimento backend &middot; APIs REST &middot; Banco de dados &middot; Aplica&ccedil;&otilde;es web">
+         Desenvolvimento backend &middot; APIs REST &middot; Banco de dados &middot; Aplica&ccedil;&otilde;es web
+        </span>
+       </div>
+       <div class="timeline-item">
+        <strong data-en="Continuous Backend learning" data-pt="Estudos cont&iacute;nuos em Backend">
+         Estudos cont&iacute;nuos em Backend
+        </strong>
+        <span data-en="Automated testing &middot; Celery &middot; Redis &middot; Kafka &middot; Docker Compose &middot; Git/GitHub" data-pt="Testes automatizados &middot; Celery &middot; Redis &middot; Kafka &middot; Docker Compose &middot; Git/GitHub">
+         Testes automatizados &middot; Celery &middot; Redis &middot; Kafka &middot; Docker Compose &middot; Git/GitHub
+        </span>
+       </div>
+       <div class="timeline-item">
+        <strong>
+         Projetos pr&aacute;ticos de desenvolvimento web
+        </strong>
+        <span data-en="Responsive interfaces &middot; React and Vite &middot; Forms &middot; Shopping cart &middot; WhatsApp integration" data-pt="Interfaces responsivas &middot; React e Vite &middot; Formul&aacute;rios &middot; Carrinho de compras &middot; Integra&ccedil;&atilde;o com WhatsApp">
+         Interfaces responsivas &middot; React e Vite &middot; Formul&aacute;rios &middot; Carrinho de compras &middot; Integra&ccedil;&atilde;o com WhatsApp
+        </span>
+       </div>
       </div>
-
+     </div>
+    </section>
+    <section id="contato">
+     <div class="container">
+      <div class="contact">
+       <div class="kicker" data-en="Contact" data-pt="Contato">
+        Contato
+       </div>
+       <h2 class="section-title" data-en="Let's talk?" data-pt="Vamos conversar?">
+        Vamos conversar?
+       </h2>
+       <p class="section-intro" data-en="I'm looking for opportunities in Backend Python development." data-pt="Estou buscando oportunidades na &aacute;rea de desenvolvimento Backend Python." style="margin-left:auto;margin-right:auto">
+        Estou buscando oportunidades na &aacute;rea de desenvolvimento Backend Python.
+       </p>
+       <div class="actions" style="justify-content:center">
+        <a class="btn primary" data-en="Send email" data-pt="Enviar e-mail" href="mailto:muniz_157@outlook.com">
+         Enviar e-mail
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/guilherme-muniz-dev/" rel="noopener" target="_blank">
+         LinkedIn
+        </a>
+        <a class="btn" href="https://github.com/NewEraM" rel="noopener" target="_blank">
+         GitHub
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer>
+    <div class="container">
+     &copy; 2026 Guilherme Muniz &middot; Backend Python e Desenvolvimento de Software
     </div>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<footer>
-
-  <div class="container">
-    © 2026 Guilherme Muniz · Backend Python
-  </div>
-
-</footer>
-
-
-<script>
-
-const languageBtn = document.getElementById("languageBtn");
+   </footer>
+   <script>
+    const languageBtn = document.getElementById("languageBtn");
 
 let currentLanguage = "pt";
 
@@ -1038,10 +1024,7 @@ languageBtn.addEventListener("click", () => {
     currentLanguage === "pt" ? "EN" : "PT";
 
 });
-
-</script>
-
-</div>
-
-</body>
+   </script>
+  </div>
+ </body>
 </html>
